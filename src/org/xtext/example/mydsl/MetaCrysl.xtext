@@ -1,0 +1,9 @@
+grammar org.xtext.example.mydsl.MetaCrysl with org.eclipse.xtext.common.Terminals
+
+generate metaCrysl "http://www.xtext.org/example/mydsl/MetaCrysl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
