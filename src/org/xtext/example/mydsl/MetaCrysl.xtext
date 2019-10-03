@@ -7,7 +7,31 @@ MetaCrysl:
 ;
 	
 Definition:
-	Spec | Objects	
+	Spec | Objects | Events
+;
+
+Events :
+	'EVENTS' (elements+= Event)+
+;
+
+Event :
+	SingleEvent 
+;
+
+SingleEvent:
+	label=QualifiedName ':' method=QualifiedName '(' (args+= ArgsList)* ')' ';'
+;
+
+ArgsList:
+	Arg | Args
+;
+
+Arg:
+	arg=QualifiedName
+;
+
+Args:
+	arg=QualifiedName ','
 ;
 
 Spec:
