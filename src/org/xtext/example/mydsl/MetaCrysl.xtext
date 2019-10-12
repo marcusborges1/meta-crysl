@@ -37,7 +37,13 @@ Events:
 ;
 
 Event:
-	label=ID ':' method=Method ';'
+	label=ID ':=' (aggregates+= Aggregate ('|' aggregates+= Aggregate)*)+ ';' |
+	label=ID ':' method=Method ';' |
+	label=ID ':' varname=ID '=' method=Method ';'
+;
+
+Aggregate:
+	name=ID
 ;
 
 Method:

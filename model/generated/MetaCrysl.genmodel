@@ -26,7 +26,12 @@
     </genClasses>
     <genClasses ecoreClass="MetaCrysl.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Event/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//Event/aggregates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//Event/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Event/varname"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//Aggregate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Aggregate/name"/>
     </genClasses>
     <genClasses ecoreClass="MetaCrysl.ecore#//Method">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Method/methodName"/>
