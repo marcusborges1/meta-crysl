@@ -10,6 +10,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//MetaCrysl/spec"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//MetaCrysl/objects"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//MetaCrysl/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//MetaCrysl/forbiddenMethods"/>
     </genClasses>
     <genClasses ecoreClass="MetaCrysl.ecore#//Spec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Spec/name"/>
@@ -40,5 +41,18 @@
     <genClasses ecoreClass="MetaCrysl.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Parameter/varname"/>
     </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//ForbiddenMethods">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//ForbiddenMethods/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//ForbiddenMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//ForbiddenMethod/methodName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//ForbiddenMethod/types"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//ForbiddenMethod/label"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Type/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//SimpleType"/>
+    <genClasses ecoreClass="MetaCrysl.ecore#//ArrayType"/>
   </genPackages>
 </genmodel:GenModel>

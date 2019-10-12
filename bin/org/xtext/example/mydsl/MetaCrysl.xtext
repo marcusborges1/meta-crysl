@@ -6,6 +6,7 @@ MetaCrysl:
 	spec=Spec
 	objects=Objects
 	events=Events
+	forbiddenMethods=ForbiddenMethods
 ;
 
 Spec:
@@ -17,19 +18,19 @@ Objects:
 ;
 
 Object:
-	type=(Type) varname=ID ';'
+	type=(QualifiedType) varname=ID ';'
 ;
 
-SimpleType:
+QualifiedSimpleType:
 	QualifiedName
 ;
 
-ArrayType:
+QualifiedArrayType:
 	QualifiedName '[' ']'
 ;
 
-Type:
-	SimpleType | ArrayType
+QualifiedType:
+	QualifiedSimpleType | QualifiedArrayType
 ;
 
 Events:
@@ -52,6 +53,26 @@ Method:
 
 Parameter:
 	varname=ID
+;
+
+ForbiddenMethods:
+	'FORBIDDEN' (elements+= ForbiddenMethod)+
+;
+
+ForbiddenMethod:
+	methodName=ID '(' (types+= Type (',' types+=Type)*)* ')' '=''>' label=ID ';'
+;
+
+Type:
+	SimpleType | ArrayType	
+;
+
+SimpleType:
+	name=ID
+;
+
+ArrayType:
+	name=ID '[' ']'
 ;
 
 QualifiedName:
