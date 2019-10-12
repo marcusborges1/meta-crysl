@@ -36,12 +36,12 @@ Events:
 	'EVENTS' (elements+= Event)+
 ;
 
-Event: 
+Event:
 	label=ID ':' method=Method ';'
 ;
 
 Method:
-	methodName=ID '(' parameters += Parameter (',' parameters += Parameter)* ')'
+	methodName=ID '(' (parameters += Parameter (',' parameters += Parameter)*)* ')'
 ;
 
 Parameter:
