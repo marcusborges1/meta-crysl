@@ -3,10 +3,51 @@ grammar org.xtext.example.mydsl.MetaCrysl with org.eclipse.xtext.common.Terminal
 generate metaCrysl "http://www.xtext.org/example/mydsl/MetaCrysl"
 
 MetaCrysl:
-	Spec;
-	
+	spec=Spec
+	objects=Objects
+	events=Events
+;
+
 Spec:
-	'SPEC' name=QualifiedName;
-	
+	'SPEC' name=QualifiedName
+;
+
+Objects:
+	'OBJECTS' (elements+=Object)+
+;
+
+Object:
+	type=(Type) varname=ID ';'
+;
+
+SimpleType:
+	QualifiedName
+;
+
+ArrayType:
+	QualifiedName '[' ']'
+;
+
+Type:
+	SimpleType | ArrayType
+;
+
+Events:
+	'EVENTS' (elements+= Event)+
+;
+
+Event: 
+	label=ID ':' method=Method ';'
+;
+
+Method:
+	methodName=ID '(' parameters += Parameter (',' parameters += Parameter)* ')'
+;
+
+Parameter:
+	varname=ID
+;
+
 QualifiedName:
-	ID ('.' ID)*;
+	ID('.' ID)*
+;

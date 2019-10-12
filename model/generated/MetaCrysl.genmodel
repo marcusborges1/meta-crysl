@@ -6,9 +6,34 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.18">
   <genPackages prefix="MetaCrysl" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       fileExtensions="mcrysl" ecorePackage="MetaCrysl.ecore#/">
-    <genClasses ecoreClass="MetaCrysl.ecore#//MetaCrysl"/>
+    <genClasses ecoreClass="MetaCrysl.ecore#//MetaCrysl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//MetaCrysl/spec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//MetaCrysl/objects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//MetaCrysl/events"/>
+    </genClasses>
     <genClasses ecoreClass="MetaCrysl.ecore#//Spec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Spec/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//Objects">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//Objects/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//Object">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Object/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Object/varname"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//Events">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//Events/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Event/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//Event/method"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Method/methodName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaCrysl.ecore#//Method/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaCrysl.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaCrysl.ecore#//Parameter/varname"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
